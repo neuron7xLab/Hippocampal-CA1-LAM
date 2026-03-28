@@ -19,4 +19,4 @@
 - [ ] Biological baseline _(Issue: TBD)_
 - [ ] Regression test suite _(Issue: TBD)_
 
-**Note**: Replace `_(Issue: TBD)_` with actual issue links like `[#123](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues/123)` as issues are created
+**Note**: Replace `_(Issue: TBD)_` with actual issue links like `[#123](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues/123)` as issues are created

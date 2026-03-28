@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://github.com/neuron7x/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml/badge.svg)](https://github.com/neuron7x/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml)
+[![Tests](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml/badge.svg)](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml)
 
 **Production-grade neurobiological model of CA1 hippocampus for AI memory and computational neuroscience.**
 
@@ -24,7 +24,7 @@ We're following a comprehensive **8-phase evolution plan** to build v3.0:
 | 7 | Quality & Release | 📋 Planned |
 | 8 | Community & Impact | 📋 Planned |
 
-**📖 [Full Evolution Plan](docs/EVOLUTION_PLAN.md)** | **🎯 [Current Issues](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap)** | **📊 [Project Board](https://github.com/neuron7x/Hippocampal-CA1-LAM/projects)**
+**📖 [Full Evolution Plan](docs/EVOLUTION_PLAN.md)** | **🎯 [Current Issues](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap)** | **📊 [Project Board](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/projects)**
 
 ### Contributing to the Roadmap
 1. Check the [Evolution Plan](docs/EVOLUTION_PLAN.md) for available tasks
@@ -181,7 +181,7 @@ All parameters from peer-reviewed sources:
   title = {CA1 Hippocampus Framework v2.0},
   author = {neuron7x},
   year = {2025},
-  url = {https://github.com/neuron7x/Hippocampal-CA1-LAM}
+  url = {https://github.com/neuron7xLab/Hippocampal-CA1-LAM}
 }
 ```
 
@@ -191,4 +191,4 @@ MIT License - see [LICENSE](LICENSE)
 
 ## Contact
 
-- Issues: [GitHub Issues](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues)
+- Issues: [GitHub Issues](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues)

@@ -10,7 +10,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 
 ### Reporting Bugs
 
-1. Check [existing issues](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues)
+1. Check [existing issues](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues)
 2. Create new issue with:
    - Clear title
    - Steps to reproduce
@@ -20,7 +20,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 
 ### Suggesting Features
 
-1. Check [existing issues](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues)
+1. Check [existing issues](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues)
 2. Open feature request with:
    - Use case description
    - Proposed API
@@ -32,7 +32,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 
 ```bash
 # Fork and clone
-git clone https://github.com/neuron7x/Hippocampal-CA1-LAM.git
+git clone https://github.com/neuron7xLab/Hippocampal-CA1-LAM.git
 cd Hippocampal-CA1-LAM
 
 # Create branch
@@ -148,6 +148,6 @@ hippocampal_ca1_lam/
 
 ## Questions?
 
-- Open an [Issue](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues)
+- Open an [Issue](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues)
 
 Thank you for contributing! 🧠

@@ -179,7 +179,7 @@ Requirements:
   author = {{Your Name}},
   year = {{2025}},
   version = {{{version}}},
-  url = {{https://github.com/neuron7x/Hippocampal-CA1-LAM}}
+  url = {{https://github.com/neuron7xLab/Hippocampal-CA1-LAM}}
 }}
 ```
 
@@ -189,8 +189,8 @@ MIT License - see LICENSE file
 
 ## Support
 
-- Issues: https://github.com/neuron7x/Hippocampal-CA1-LAM/issues
-- Discussions: https://github.com/neuron7x/Hippocampal-CA1-LAM/discussions
+- Issues: https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues
+- Discussions: https://github.com/neuron7xLab/Hippocampal-CA1-LAM/discussions
 
 ---
 
@@ -240,7 +240,7 @@ def main():
     print(f"  • {notes_file}")
     print()
     print("Next steps:")
-    print("  1. Go to: https://github.com/neuron7x/Hippocampal-CA1-LAM/releases/new")
+    print("  1. Go to: https://github.com/neuron7xLab/Hippocampal-CA1-LAM/releases/new")
     print(f"  2. Tag: v{version}")
     print(f"  3. Title: Hippocampal-CA1-LAM v{version}")
     print(f"  4. Description: Copy from {notes_file}")

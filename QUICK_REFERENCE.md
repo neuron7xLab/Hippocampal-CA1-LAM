@@ -122,7 +122,7 @@ python test_golden_standalone.py
 ## 📞 ПІДТРИМКА
 
 - **Документація**: GETTING_STARTED.md
-- **GitHub Issues**: https://github.com/neuron7x/Hippocampal-CA1-LAM/issues
+- **GitHub Issues**: https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues
 
 ---
 

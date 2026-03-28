@@ -367,7 +367,7 @@ When using this framework in publications:
 1. **Cite the framework**:
    ```
    CA1 Hippocampus Framework v2.0 (2025)
-   https://github.com/neuron7x/Hippocampal-CA1-LAM
+   https://github.com/neuron7xLab/Hippocampal-CA1-LAM
    ```
 
 2. **Cite primary references** for mechanisms used:

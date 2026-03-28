@@ -29,7 +29,7 @@ This Code of Conduct applies within project spaces and in public spaces when rep
 
 ## Enforcement
 
-Instances of abusive behavior may be reported via [GitHub Issues](https://github.com/neuron7x/Hippocampal-CA1-LAM/issues). All complaints will be reviewed and investigated.
+Instances of abusive behavior may be reported via [GitHub Issues](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/issues). All complaints will be reviewed and investigated.
 
 ## Attribution
 

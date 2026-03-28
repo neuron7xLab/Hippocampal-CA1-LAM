@@ -24,7 +24,7 @@ Complete installation instructions for all platforms.
 
 ```bash
 # Clone repository
-git clone https://github.com/neuron7x/Hippocampal-CA1-LAM.git
+git clone https://github.com/neuron7xLab/Hippocampal-CA1-LAM.git
 cd Hippocampal-CA1-LAM
 
 # Create virtual environment
@@ -42,7 +42,7 @@ python test_golden_standalone.py
 
 ```powershell
 # Clone repository
-git clone https://github.com/neuron7x/Hippocampal-CA1-LAM.git
+git clone https://github.com/neuron7xLab/Hippocampal-CA1-LAM.git
 cd Hippocampal-CA1-LAM
 
 # Create virtual environment

@@ -6,11 +6,12 @@ with open("README.md", "r", encoding="utf-8") as f:
 setup(
     name="Hippocampal-CA1-LAM",
     version="2.0.0",
-    author="neuron7x",
+    author="Yaroslav Vasylenko",
+    author_email="neuron7xlab@gmail.com",
     description="Production-grade CA1 hippocampus model for AI memory and neuroscience",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/neuron7x/Hippocampal-CA1-LAM",
+    url="https://github.com/neuron7xLab/Hippocampal-CA1-LAM",
     packages=find_packages(exclude=["tests", "examples", "docs"]),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -19,12 +20,11 @@ setup(
         "Topic :: Scientific/Engineering :: Bio-Informatics",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.10",
     install_requires=[
         "numpy>=1.24.0",
         "scipy>=1.10.0",
@@ -42,9 +42,5 @@ setup(
             "matplotlib>=3.7.0",
         ],
     },
-    entry_points={
-        "console_scripts": [
-            "ca1-test=test_golden_standalone:main",
-        ],
-    },
+    entry_points={},
 )

@@ -5,7 +5,7 @@ version: 2.0.0
 date-released: 2025-12-14
 authors:
   - name: "neuron7x"
-repository-code: "https://github.com/neuron7x/Hippocampal-CA1-LAM"
+repository-code: "https://github.com/neuron7xLab/Hippocampal-CA1-LAM"
 license: MIT
 keywords:
   - hippocampus

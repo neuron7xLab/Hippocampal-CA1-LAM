@@ -76,4 +76,4 @@ body:
     attributes:
       label: Evolution Plan Link
       description: "Direct link to section in docs/EVOLUTION_PLAN.md"
-      placeholder: "https://github.com/neuron7x/Hippocampal-CA1-LAM/blob/main/docs/EVOLUTION_PLAN.md#..."
+      placeholder: "https://github.com/neuron7xLab/Hippocampal-CA1-LAM/blob/main/docs/EVOLUTION_PLAN.md#..."
