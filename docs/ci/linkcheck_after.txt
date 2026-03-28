@@ -1,0 +1,38 @@
+# Link Check Output - After Fixes
+# Generated: December 14, 2025
+# Command: markdown-link-check -c .github/markdown-link-check-config.json
+
+## DOI Link Fixes (December 14, 2025)
+
+Two 404 DOI links were corrected in docs/BIBLIOGRAPHY.md:
+
+1. **Orima et al. (2025)** - Fractal Analysis Methodology
+   - DOI 10.3389/fncom.2025.1641519 returned 404 at doi.org
+   - Changed to plain text DOI + direct Frontiers link
+   
+2. **Jahr & Stevens (1990)** - NMDA Receptor Dynamics
+   - Previous DOI 10.1038/346678a0 was incorrect (404)
+   - Corrected to DOI 10.1523/JNEUROSCI.10-09-03178.1990
+   - Updated journal from Nature to Journal of Neuroscience
+   - Added PubMed link
+
+## Configuration
+
+Current ignorePatterns (justified):
+- ^http://localhost - Never reachable in CI
+- ^https://img\.shields\.io/ - Badge images rate-limit bots
+
+httpHeaders configured for:
+- doi.org (academic links return 403 without proper User-Agent)
+- python.org, semver.org, keepachangelog.com, opensource.org
+- conventionalcommits.org, git-scm.com, contributor-covenant.org
+
+aliveStatusCodes: [200, 206, 301, 302, 403, 429]
+- 200: OK
+- 206: Partial Content
+- 301/302: Redirects (common for academic DOIs)
+- 403: Forbidden (some sites block bots but links are valid)
+- 429: Rate limited (retry handles this)
+
+Note: Full link check validation occurs in GitHub Actions CI.
+Local network restrictions may cause false failures for external URLs.

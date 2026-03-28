@@ -1,0 +1,16 @@
+# CODEOWNERS - Require review for security-sensitive paths
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything (fallback)
+* @neuron7x
+
+# GitHub Actions workflows - require security review
+.github/workflows/ @neuron7x
+
+# Security configurations
+SECURITY.md @neuron7x
+.gitleaks.toml @neuron7x
+.github/markdown-link-check-config.json @neuron7x
+
+# Security and validation tools
+tools/ @neuron7x

@@ -1,0 +1,17 @@
+# Link Check Output - Before Fixes
+# Generated: December 14, 2025
+# Command: markdown-link-check -c .github/markdown-link-check-config.json
+
+Note: This file documents the state before configuration updates.
+The original config had broad ignorePatterns that masked link checking for
+many external domains.
+
+Previous config issues:
+- doi.org was completely ignored via ignorePattern (not checked at all)
+- Many external domains bypassed via ignorePatterns
+
+External links that were being skipped:
+- https://doi.org/* (all DOI links)
+- Other domains handled via httpHeaders but some failed
+
+See linkcheck_after.txt for the current state after fixes.

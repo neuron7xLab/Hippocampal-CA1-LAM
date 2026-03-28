@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "CA1 Hippocampus Framework"
+version: 2.0.0
+date-released: 2025-12-14
+authors:
+  - name: "neuron7x"
+repository-code: "https://github.com/neuron7x/Hippocampal-CA1-LAM"
+license: MIT
+keywords:
+  - hippocampus
+  - CA1
+  - computational neuroscience
+  - plasticity
+  - memory
+  - artificial intelligence
+  - neuroscience
+references:
+  - type: article
+    authors:
+      - family-names: Graupner
+        given-names: M.
+      - family-names: Brunel
+        given-names: N.
+    title: "Calcium-based plasticity model explains sensitivity of synaptic changes to spike pattern, rate, and dendritic location"
+    journal: "Proceedings of the National Academy of Sciences"
+    year: 2012
+    volume: 109
+    issue: 10
+    start: 3991
+    end: 3996
+    doi: 10.1073/pnas.1109359109
+  - type: article
+    authors:
+      - family-names: Pachicano
+        given-names: M.
+    title: "Laminar organization of pyramidal neuron cell types defines distinct CA1 hippocampal subregions"
+    journal: "Nature Communications"
+    year: 2025
+    doi: 10.1038/s41467-025-66613-y
