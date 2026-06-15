@@ -1,3 +1,6 @@
 [flake8]
 max-line-length = 100
-exclude = venv,venv-dev,build,dist
+# E203/W503 conflict with black's slice and line-break style; disabled per
+# black's documented flake8-compatibility guidance.
+extend-ignore = E203, W503
+exclude = venv,venv-dev,build,dist,.venv

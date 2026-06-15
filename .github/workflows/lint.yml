@@ -1,0 +1,40 @@
+name: Lint & Format
+
+# Enforces the formatting/lint contract that `make format` / `make lint` use
+# locally, so style debt can no longer drift back into main. Pins the same
+# black version as .pre-commit-config.yaml (24.10.0, line-length 100).
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '**/*.py'
+  push:
+    branches: [main]
+    paths:
+      - '**/*.py'
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: black + flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.x'
+
+      - name: Install linters
+        run: pip install "black==24.10.0" "flake8>=6.0.0"
+
+      - name: Check formatting (black)
+        run: black --check --line-length 100 --exclude '/(\.git|\.venv|venv|build|dist)/' .
+
+      - name: Lint (flake8)
+        run: flake8 . --max-line-length=100 --exclude=venv,venv-dev,build,dist,.git,.venv

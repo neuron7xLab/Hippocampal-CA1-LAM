@@ -344,7 +344,7 @@ def build_knn_neighbors(cells: List[CellDataHier], k: int = 10) -> List[CellData
 
     # Find k nearest neighbors (excluding self)
     for i in range(N):
-        neighbors = np.argsort(distances[i])[1:k + 1]  # Exclude self (0)
+        neighbors = np.argsort(distances[i])[1 : k + 1]  # Exclude self (0)
         cells[i].neighbors = neighbors.tolist()
 
     return cells
