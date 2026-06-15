@@ -17,12 +17,12 @@ from pathlib import Path
 # Add package to path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from data.biophysical_parameters import get_default_parameters
-from core.laminar_structure import ZINBLayerModel, CellData, SubregionClassifier
-from core.neuron_model import CA1Population, NetworkMode
-from plasticity.calcium_plasticity import SynapseManager
-from ai_integration.memory_module import LLMWithCA1Memory
-from validation.validators import CA1Validator
+from data.biophysical_parameters import get_default_parameters  # noqa: E402
+from core.laminar_structure import ZINBLayerModel, CellData, SubregionClassifier  # noqa: E402
+from core.neuron_model import CA1Population, NetworkMode  # noqa: E402
+from plasticity.calcium_plasticity import SynapseManager  # noqa: E402
+from ai_integration.memory_module import LLMWithCA1Memory  # noqa: E402
+from validation.validators import CA1Validator  # noqa: E402
 
 
 def demo_laminar_inference():
@@ -63,7 +63,7 @@ def demo_laminar_inference():
     # Fit ZINB model
     print("Fitting ZINB layer model...")
     model = ZINBLayerModel()
-    q = model.fit_em(cells, max_iter=30)
+    model.fit_em(cells, max_iter=30)
 
     # Assign layers
     assignments = model.assign_layers(cells)
@@ -92,9 +92,8 @@ def demo_laminar_inference():
 
     for name, positions in subregion_map.items():
         if positions:
-            print(
-                f"{name}: {len(positions)} positions (s ∈ [{min(positions):.2f}, {max(positions):.2f}])"
-            )
+            lo, hi = min(positions), max(positions)
+            print(f"{name}: {len(positions)} positions (s ∈ [{lo:.2f}, {hi:.2f}])")
 
 
 def demo_network_dynamics():
@@ -280,7 +279,7 @@ def demo_full_system():
         )
 
     model_laminar = ZINBLayerModel()
-    q = model_laminar.fit_em(cells, max_iter=20)
+    model_laminar.fit_em(cells, max_iter=20)
     layer_assignments = model_laminar.assign_layers(cells)
 
     # 2. Create neural population

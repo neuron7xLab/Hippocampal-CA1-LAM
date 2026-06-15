@@ -82,9 +82,9 @@ def test_laminar_inference_golden():
     assert len(layer_counts) == 4, "Should have 4 layers"
     assert all(100 < count < 400 for count in layer_counts), f"Unbalanced layers: {layer_counts}"
 
-    print(
-        f"✓ Laminar inference: I(L;z)={metrics['mutual_information']:.3f}, CE={metrics['coexpression_rate']:.3f}"
-    )
+    mi = metrics["mutual_information"]
+    ce = metrics["coexpression_rate"]
+    print(f"✓ Laminar inference: I(L;z)={mi:.3f}, CE={ce:.3f}")
 
 
 # ============================================================================

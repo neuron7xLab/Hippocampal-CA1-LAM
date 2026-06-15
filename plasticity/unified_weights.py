@@ -175,10 +175,8 @@ class UnifiedWeightMatrix:
         eta_p_base = p.eta_p
         eta_d_base = p.eta_d
 
-        # Mask for each input type
-        mask_CA3 = self.source_types == InputSource.CA3.value
+        # EC synapses are down-weighted below; CA3/LOCAL keep the base rate
         mask_EC = self.source_types == InputSource.EC.value
-        mask_LOCAL = self.source_types == InputSource.LOCAL.value
 
         # EC synapses have 10x lower plasticity (DELTA: stable feedforward)
         eta_p = np.ones((self.N, self.N)) * eta_p_base
@@ -417,6 +415,6 @@ if __name__ == "__main__":
 
     print(f"EC weight change: {np.mean(W_after_EC - W_before_EC):.6f} (should be small)")
     print(f"CA3 weight change: {np.mean(W_after_CA3 - W_before_CA3):.6f} (should be larger)")
-    print(
-        f"Ratio: {np.mean(W_after_CA3 - W_before_CA3) / (np.mean(W_after_EC - W_before_EC) + 1e-8):.2f}"
-    )
+    ca3_delta = np.mean(W_after_CA3 - W_before_CA3)
+    ec_delta = np.mean(W_after_EC - W_before_EC)
+    print(f"Ratio: {ca3_delta / (ec_delta + 1e-8):.2f}")

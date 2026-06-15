@@ -11,8 +11,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from data.biophysical_parameters import get_default_parameters
-from plasticity.unified_weights import (
+from data.biophysical_parameters import get_default_parameters  # noqa: E402
+from plasticity.unified_weights import (  # noqa: E402
     InputSource,
     UnifiedWeightMatrix,
     create_source_type_matrix,

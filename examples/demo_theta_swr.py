@@ -7,9 +7,14 @@ Demonstrates:
 - Replay detection
 - Gating modulation
 """
-import numpy as np
+import os
+import sys
 
-from core.theta_swr_switching import (
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import numpy as np  # noqa: E402
+
+from core.theta_swr_switching import (  # noqa: E402
     NetworkState,
     NetworkStateController,
     ReplayDetector,
