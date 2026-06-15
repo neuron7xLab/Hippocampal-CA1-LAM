@@ -15,8 +15,6 @@ on:
       - 'README.md'
       - '**/*.md'
       - '.github/markdown-link-check-config.json'
-  schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sunday
 
 permissions:
   contents: read

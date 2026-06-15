@@ -95,11 +95,13 @@ def create_release_notes(version="2.0.0"):
     notes = f"""# Hippocampal-CA1-LAM v{version}
 
 **Release Date**: {date}
-**Status**: Production Ready ✓
+**Status**: Research model — reproducible, literature-grounded, not validated
+against in-house electrophysiology.
 
 ## Overview
 
-Production-grade neurobiological model of CA1 hippocampal region for AI memory systems and computational neuroscience research.
+Literature-grounded mechanistic model of the CA1 hippocampal circuit for
+computational neuroscience and AI-memory research.
 
 ## Features
 

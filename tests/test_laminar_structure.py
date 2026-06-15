@@ -113,7 +113,7 @@ class TestZINBLayerModel:
     def test_assign_layers(self, model, synthetic_cells):
         """Test layer assignment"""
         # First fit the model
-        q = model.fit_em(synthetic_cells[:100], max_iter=5, tol=1e-3)
+        model.fit_em(synthetic_cells[:100], max_iter=5, tol=1e-3)
 
         assignments = model.assign_layers(synthetic_cells[:100])
 

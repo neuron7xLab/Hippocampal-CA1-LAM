@@ -8,10 +8,15 @@ Demonstrates:
 - Simulation loop
 - Weight dynamics
 """
-import numpy as np
+import os
+import sys
 
-from data.biophysical_parameters import get_default_parameters
-from plasticity.unified_weights import UnifiedWeightMatrix, create_source_type_matrix
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import numpy as np  # noqa: E402
+
+from data.biophysical_parameters import get_default_parameters  # noqa: E402
+from plasticity.unified_weights import UnifiedWeightMatrix, create_source_type_matrix  # noqa: E402
 
 # Set seed
 np.random.seed(42)
