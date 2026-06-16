@@ -13,7 +13,7 @@ mypy>=1.5.0
 
 # Security
 bandit>=1.7.0
-safety>=2.3.0
+safety>=3.8.1
 
 # Pre-commit
 pre-commit>=3.3.0
