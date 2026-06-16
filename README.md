@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml/badge.svg)](https://github.com/neuron7xLab/Hippocampal-CA1-LAM/actions/workflows/python-tests.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/neuron7xLab/Hippocampal-CA1-LAM/badge)](https://scorecard.dev/viewer/?uri=github.com/neuron7xLab/Hippocampal-CA1-LAM)
 
 A reproducible, research-grade computational model of CA1: a two-compartment
 conductance-based pyramidal neuron, a four-sublayer laminar structure, theta↔SWR
