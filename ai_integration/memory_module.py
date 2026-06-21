@@ -31,6 +31,7 @@ class MemoryEntry:
     timestamp: float  # Time of encoding
     novelty: float  # Novelty at encoding [0, 1]
     access_count: int = 0  # Number of retrievals
+    source_h: Optional[np.ndarray] = None  # Hidden state the key was encoded from
 
 
 class CA1MemoryModule:
@@ -136,6 +137,7 @@ class CA1MemoryModule:
             theta_phase=self.theta_phase,
             timestamp=0.0,  # Will be set externally
             novelty=novelty,
+            source_h=h_t.copy(),  # retained so consolidation can re-encode the key
         )
 
         # Find slot
@@ -168,8 +170,10 @@ class CA1MemoryModule:
         if top_k is None:
             top_k = self.p.top_k
 
-        # Encode query
-        q_key = self.encode_event(q_t, include_phase=False)
+        # Encode query phase-aware: the query must live in the same phase-
+        # augmented space as stored keys, otherwise theta phase is pure
+        # mismatch noise (gated off when use_phase_key is False).
+        q_key = self.encode_event(q_t, include_phase=True)
 
         # Compute similarities
         similarities = []
@@ -298,12 +302,19 @@ class CA1MemoryModule:
 
         replayed = [valid_entries[i][0] for i in selected_idx]
 
-        # Simulate replay (update weights via Ca²⁺-based learning)
-        # In full implementation, this would run actual plasticity updates
+        # Simulate replay (update weights via Ca²⁺-based learning).
+        # The Hebbian update mutates the encoder; stored keys must be re-encoded
+        # at their original theta phase so they track the encoder instead of
+        # drifting out of alignment with it (frozen-key bug).
+        saved_phase = self.theta_phase
         for idx in replayed:
             entry = self.memory[idx]
             # Hebbian-like update: strengthen key encoding
             self.W_encoder += self.eta * np.outer(entry.key, entry.value[: self.p.d_model])
+            if entry.source_h is not None:
+                self.theta_phase = entry.theta_phase
+                entry.key = self.encode_event(entry.source_h, include_phase=True)
+        self.theta_phase = saved_phase
 
         return replayed
 

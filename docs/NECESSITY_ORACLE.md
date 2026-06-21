@@ -77,12 +77,42 @@ python -m oracle.run_oracle --seeds 24
 These are negative artefacts, not failures: the oracle did its job by refusing
 to confirm mechanisms the implementation does not actually support.
 
-## What would flip a verdict (honest next steps)
+## Closure run — same frozen registry (`20be317d…`), two implementation fixes
 
-- Make `retrieve()` phase-aware (encode query with the current theta phase) and
-  re-run; only then can phase coding be fairly tested for necessity.
-- Make replay update **stored keys** (re-encode replayed entries) rather than
-  only the encoder, removing the representational drift; re-run replay/novelty.
+The first run's REFUTED/NULL verdicts were treated as falsification leads, not
+endpoints. Two defects in `ai_integration/memory_module.py` were repaired and the
+**same pre-registered predictions** were re-run (registry hash unchanged — no new
+version opened):
 
-The predictions registry stays frozen; any such change opens a **new** versioned
-prediction entry rather than editing the pinned one.
+1. **`retrieve()` was phase-blind** (`include_phase=False`): the query is now
+   encoded phase-aware, and the benchmark probes each cue at the item's stored
+   theta phase (the cue carries the event's own temporal context).
+2. **`replay()` froze keys**: stored keys are now re-encoded from a retained
+   `source_h` at their original phase after each Hebbian encoder update, so keys
+   track the encoder instead of drifting out of alignment.
+
+Re-run (24 seeds, baseline recall@1 ≈ 0.92):
+
+| mechanism | knockout | Δ(base−ko) | 95% CI | verdict |
+|-----------|----------|-----------:|--------|---------|
+| replay_consolidation | KO_REPLAY | +0.000 | [+0.000, +0.000] | **NULL** |
+| novelty_gated_selection | KO_NOVELTY | +0.000 | [+0.000, +0.000] | **NULL** |
+| theta_phase_key | KO_PHASE | +0.219 | [+0.201, +0.239] | **PASS** |
+
+- **theta_phase_key: REFUTED → PASS.** With phase-matched cues the mechanism is
+  now functionally necessary (0.922 → 0.703 when removed), in the pre-registered
+  +1 direction. This prediction is **closed cleanly**.
+- **replay_consolidation: still NULL — and now a sharper negative.** Re-syncing
+  keys was *necessary but not sufficient*. A Hebbian update to the **shared**
+  encoder transforms stored keys and incoming queries symmetrically, so
+  content-addressable recall is invariant to it (CI is exactly [0, 0] across all
+  seeds: a structural no-op, not noise). To become functionally necessary,
+  consolidation needs an **asymmetric** mechanism — per-key salience/magnitude or
+  a value-side update — not a shared-encoder transform.
+- **novelty_gated_selection: still NULL.** Inherits replay's inertness; selection
+  policy cannot matter while replay itself is a no-op.
+
+The registry stays frozen. `theta_phase_key` is closed as PASS; `replay` and
+`novelty` remain **open negatives** — they are not promoted, and no new
+prediction version is opened until they are closed honestly by an asymmetric
+consolidation mechanism.

@@ -100,8 +100,10 @@ def run_condition(seed: int, spec: ConditionSpec) -> dict[str, float]:
 
     # Store episodes, advancing theta phase between events (phase diversity).
     slot_of_item: list[int] = []
+    phase_of_item: list[float] = []
     for i in range(N_ITEMS):
         mem.update_theta(dt=PHASE_STEP_S)
+        phase_of_item.append(mem.theta_phase)
         slot = mem.store(h[i], v[i], novelty=float(novelty[i]))
         slot_of_item.append(slot)
 
@@ -116,6 +118,9 @@ def run_condition(seed: int, spec: ConditionSpec) -> dict[str, float]:
         noise = cue_rng.standard_normal(D_MODEL)
         cue = h[i] + CUE_NOISE * noise
         cue /= np.linalg.norm(cue) + 1e-8
+        # The cue carries the event's own temporal context: probe at the theta
+        # phase the item was stored at (no-op when use_phase_key is False).
+        mem.theta_phase = phase_of_item[i]
         _, indices = mem.retrieve(cue, top_k=1)
         correct[i] = bool(indices) and indices[0] == slot_of_item[i]
 
